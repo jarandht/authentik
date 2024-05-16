@@ -1,0 +1,26 @@
+ip_address('88.88.194.40') in ip_network('88.88.194.40/32')
+
+return ak_client_ip in ip_network('88.88.194.40/32')
+
+return ak_client_ip ip_address('88.88.194.40') in ip_network('88.88.194.40/32')
+
+return context["geoip"].country.iso_code == "NO"
+
+user_is_group_member = ak_is_group_member(request.user, name="polecy-force-mfa")
+user_has_authenticator = ak_user_has_authenticator(request.user, 'totp')
+
+# Check if the user is a member of the group and has a TOTP authenticator
+if user_is_group_member and user_has_authenticator:
+    # Do something if the user meets both conditions
+    return True
+else:
+    # Do something else if the user doesn't meet both conditions
+    return False
+
+
+return ak_is_group_member(request.user, name="polecy-force-mfa")
+
+return ak_client_ip.is_private
+
+return ak_client_ip in ip_network('10.0.0.0/24')
+
