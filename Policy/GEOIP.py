@@ -1,3 +1,9 @@
 # Cuntry
-return context["geoip"].country.iso_code == "NO"
+return context["geoip"]["country"] == "US"
+    
+# or
 
+if context["geoip"]["country"] in ["NO", "IE"]:
+    return False
+else:
+    return True
